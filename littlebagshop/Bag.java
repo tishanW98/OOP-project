@@ -2,21 +2,31 @@ package com.mycompany.littlebagshop;
 
 import java.io.Serializable;
 
-class Bag implements Serializable {
+public class Bag implements Serializable {
     private String name;
-    private Category category;
+    private String category;
+    private double price;
 
-    public Bag(String name, Category category) {
+    public Bag(String name, String category, double price) {
         this.name = name;
         this.category = category;
+        this.price = price;
     }
 
-    public Category getCategory() {
+    public String getName() {
+        return name;
+    }
+
+    public String getCategory() {
         return category;
+    }
+
+    public double getPrice() {
+        return price;
     }
 
     @Override
     public String toString() {
-        return "Bag: " + name + ", Category: " + category.getName();
+        return name + "," + category + "," + price;
     }
 }
